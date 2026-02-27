@@ -1,19 +1,84 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Shield, Clock, Star } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Shield, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
+import heroCar2 from "@/assets/hero-car-2.jpg";
+import heroCar3 from "@/assets/hero-car-3.jpg";
+
+const heroSlides = [
+  { image: heroCar, alt: "Rolls Royce Phantom" },
+  { image: heroCar2, alt: "Range Rover Sport" },
+  { image: heroCar3, alt: "Mercedes-Benz S-Class" },
+];
 
 const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroCar}
-          alt="Luxury car"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+      {/* Slideshow Background */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={heroSlides[currentSlide].image}
+            alt={heroSlides[currentSlide].alt}
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* More transparent overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/20" />
+
+      {/* Slide navigation arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-foreground/60 hover:text-primary transition-colors p-2"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-8 w-8" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-foreground/60 hover:text-primary transition-colors p-2"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-8 w-8" />
+      </button>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        {heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentSlide(i)}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === currentSlide ? "w-10 bg-primary" : "w-4 bg-foreground/30 hover:bg-foreground/50"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-24">

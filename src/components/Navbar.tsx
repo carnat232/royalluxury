@@ -6,6 +6,7 @@ import logo from "@/assets/logo.jpeg";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Fleet", href: "#fleet" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Services", href: "#services" },
   { label: "Why Us", href: "#why-us" },
   { label: "Testimonials", href: "#testimonials" },
