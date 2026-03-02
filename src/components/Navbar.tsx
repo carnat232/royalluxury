@@ -8,8 +8,8 @@ const navLinks = [
   { label: "Fleet", href: "#fleet" },
   { label: "Gallery", href: "#gallery" },
   { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "About", href: "#about" },
+  { label: "Locations", href: "#locations" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -54,9 +54,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-primary">
+          <a href="tel:0785430626" className="flex items-center gap-2 text-sm text-primary">
             <Phone className="h-4 w-4" />
-            <span className="tracking-wide">+1 (234) 567-890</span>
+            <span className="tracking-wide">0785 430 626</span>
           </a>
           <a
             href="#contact"

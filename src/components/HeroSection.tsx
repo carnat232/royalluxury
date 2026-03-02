@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Shield, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Phone, Shield, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
 import heroCar2 from "@/assets/hero-car-2.jpg";
 import heroCar3 from "@/assets/hero-car-3.jpg";
 
 const heroSlides = [
-  { image: heroCar, alt: "Rolls Royce Phantom" },
-  { image: heroCar2, alt: "Range Rover Sport" },
-  { image: heroCar3, alt: "Mercedes-Benz S-Class" },
+  { image: heroCar, alt: "Luxury sedan on the road" },
+  { image: heroCar2, alt: "Premium SUV ready for hire" },
+  { image: heroCar3, alt: "Executive Mercedes-Benz" },
 ];
 
 const HeroSection = () => {
@@ -47,9 +47,9 @@ const HeroSection = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* More transparent overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/20" />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
 
       {/* Slide navigation arrows */}
       <button
@@ -96,43 +96,51 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6"
+            className="text-5xl md:text-7xl font-display font-bold leading-tight mb-4"
           >
-            Experience{" "}
-            <span className="text-gradient-gold">Royalty</span>
-            <br />
-            On Every Journey
+            ROYAL LUXURY{" "}
+            <span className="text-gradient-gold">CAR HIRE</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="text-2xl md:text-3xl font-elegant text-foreground/90 italic mb-8"
+          >
+            Executive Rides, Elite Experience
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
             className="text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed font-body"
           >
             Indulge in the finest collection of luxury vehicles, delivered with
             impeccable service for weddings, corporate events, airport transfers,
-            and exclusive occasions.
+            and exclusive occasions across Kenya.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.85 }}
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
             <a
-              href="#fleet"
-              className="group bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-3 hover:bg-gold-light transition-colors duration-300"
+              href="#contact"
+              className="group bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold tracking-wider uppercase inline-flex items-center justify-center gap-3 hover:bg-gold-light transition-colors duration-300"
             >
-              Explore Our Fleet
+              Book Now
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#contact"
-              className="border border-primary/50 text-primary px-8 py-4 text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-3 hover:bg-primary/10 transition-colors duration-300"
+              href="tel:0785430626"
+              className="border border-primary/50 text-primary px-8 py-4 text-sm font-semibold tracking-wider uppercase inline-flex items-center justify-center gap-3 hover:bg-primary/10 transition-colors duration-300"
             >
-              Get a Quote
+              <Phone className="h-4 w-4" />
+              Call Now
             </a>
           </motion.div>
 

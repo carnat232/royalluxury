@@ -10,19 +10,19 @@ const Footer = () => (
             <img src={logo} alt="Royal Luxury Car Hire" className="h-12 w-12 rounded-full object-cover border border-primary/30" />
             <div>
               <p className="font-display text-lg font-bold text-primary leading-tight">Royal Luxury</p>
-              <p className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Car Hire</p>
+              <p className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Car Hire Services</p>
             </div>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            The premier luxury car hire service delivering unmatched elegance and professionalism for every occasion.
+            Premium, executive, and luxury vehicles for clients who value comfort, class, and reliability across Kenya.
           </p>
         </div>
 
         <div>
           <h4 className="font-display font-bold text-primary mb-4">Quick Links</h4>
           <div className="space-y-2">
-            {["Home", "Fleet", "Services", "Why Us", "Testimonials", "Contact"].map((l) => (
-              <a key={l} href={`#${l.toLowerCase().replace(" ", "-")}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+            {["Home", "Fleet", "Gallery", "Services", "About", "Locations", "Contact"].map((l) => (
+              <a key={l} href={`#${l.toLowerCase()}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 {l}
               </a>
             ))}
@@ -32,7 +32,7 @@ const Footer = () => (
         <div>
           <h4 className="font-display font-bold text-primary mb-4">Our Services</h4>
           <div className="space-y-2">
-            {["Wedding Cars", "Corporate Travel", "Airport Transfers", "Special Events", "Self-Drive Hire", "City Tours"].map((s) => (
+            {["Luxury Car Hire", "Wedding Car Hire", "Corporate Transport", "Airport Transfers", "Off-road / SUV Rentals", "Self-Drive Hire"].map((s) => (
               <p key={s} className="text-sm text-muted-foreground">{s}</p>
             ))}
           </div>
@@ -41,14 +41,14 @@ const Footer = () => (
         <div>
           <h4 className="font-display font-bold text-primary mb-4">Contact</h4>
           <div className="space-y-3">
-            <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Phone className="h-4 w-4" /> +1 (234) 567-890
+            <a href="tel:0785430626" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Phone className="h-4 w-4" /> 0785 430 626
             </a>
-            <a href="mailto:info@royalluxurycarhire.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Mail className="h-4 w-4" /> info@royalluxurycarhire.com
+            <a href="mailto:royalluxurycarhireservices@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors break-all">
+              <Mail className="h-4 w-4 flex-shrink-0" /> royalluxurycarhireservices@gmail.com
             </a>
             <p className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4" /> 123 Mayfair Lane, London
+              <MapPin className="h-4 w-4 flex-shrink-0" /> Nairobi, Kenya
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Footer = () => (
 
       <div className="border-t border-border/30 pt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Royal Luxury Car Hire. All rights reserved.
+          © {new Date().getFullYear()} Royal Luxury Car Hire Services. All rights reserved.
         </p>
       </div>
     </div>
