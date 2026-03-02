@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href="https://wa.me/1234567890?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20your%20luxury%20car%20hire%20services."
+      href="https://wa.me/254785430626?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20your%20luxury%20car%20hire%20services."
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0 }}
