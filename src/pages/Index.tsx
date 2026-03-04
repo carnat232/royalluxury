@@ -1,3 +1,4 @@
+import PaymentOverlay from "@/components/PaymentOverlay";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FleetSection from "@/components/FleetSection";
@@ -15,6 +16,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PaymentOverlay />
       <Navbar />
       <HeroSection />
       <FleetSection />
